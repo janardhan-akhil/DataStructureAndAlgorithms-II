@@ -261,8 +261,16 @@ public class Main {
 		}
 		return n==0?"Even":"Odd";
 	}
-	
-	
+	static int reverseNumber(int n){
+		int rev = 0;
+		while(n!=0){
+			int x = n%10;
+			rev = (rev+x)*10;
+			n = n/10;
+		}
+		return rev/10;
+
+	}
 
 	public static void main(String[] args) {
 		int x = 25525241;
@@ -275,7 +283,7 @@ public class Main {
 		String s1 = "I am a Professional cricketer";
 		String s2 = "a#b#c#d";
 		int[] arr = {1,2,3,4,5,7,8,9,10,11,12};
-		int n = 19;
+		int n = 1958;
 //		System.out.println(reverse(x));
 //		System.out.println(countDigits(x));
 //		System.out.println(digitsSum(x));
@@ -304,10 +312,12 @@ public class Main {
 //		System.out.println(moveHashesToEnd(s2));
 //		System.out.println(firstNonRepeatingChar(s));
 //		System.out.println(findMissingNumbet(arr));
-		System.out.println(evenOrOdd(n));
-		
-		String string = Stream.of(s.split("")).reduce("",(a,b) -> b+a);
-		System.out.println(string);
+//		System.out.println(evenOrOdd(n));
+//
+//		String string = Stream.of(s.split("")).reduce("",(a,b) -> b+a);
+//		System.out.println(string);
+
+		System.out.println(reverseNumber(x));
 	}
 
 }
