@@ -272,6 +272,14 @@ public class Main {
 
 	}
 
+	static void printFirstCharOfEachWord(String s) {
+		for(int i=0;i<s.length();i++) {
+			if(i==0 || s.charAt(i-1)==' ') {
+				System.out.print(s.charAt(i)+" ");
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		int x = 25525241;
 		List<String> li = List.of("Arun", "Ravi", "Vikram", "Akhil", "Surya");
@@ -316,8 +324,9 @@ public class Main {
 //
 //		String string = Stream.of(s.split("")).reduce("",(a,b) -> b+a);
 //		System.out.println(string);
+//		System.out.println(reverseNumber(x));
 
-		System.out.println(reverseNumber(x));
+		printFirstCharOfEachWord(s1);
 	}
 
 }
