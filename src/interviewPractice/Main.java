@@ -1,16 +1,6 @@
 package interviewPractice;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -280,6 +270,21 @@ public class Main {
 		}
 	}
 
+	static int secondLargestElement(int[] arr){
+		int firstMax = -1;
+		int secondMax = -1;
+		for(int i=1;i<arr.length;i++){
+			if(arr[i]>firstMax){
+				secondMax = firstMax;
+				firstMax = arr[i];
+			}
+			if(arr[i]>secondMax && arr[i]!=firstMax){
+				secondMax = arr[i];
+			}
+		}
+		return secondMax;
+	}
+
 	public static void main(String[] args) {
 		int x = 25525241;
 		List<String> li = List.of("Arun", "Ravi", "Vikram", "Akhil", "Surya");
@@ -321,12 +326,12 @@ public class Main {
 //		System.out.println(firstNonRepeatingChar(s));
 //		System.out.println(findMissingNumbet(arr));
 //		System.out.println(evenOrOdd(n));
-//
 //		String string = Stream.of(s.split("")).reduce("",(a,b) -> b+a);
 //		System.out.println(string);
 //		System.out.println(reverseNumber(x));
+//		printFirstCharOfEachWord(s1);
+		System.out.println(secondLargestElement(arr1));
 
-		printFirstCharOfEachWord(s1);
 	}
 
 }
