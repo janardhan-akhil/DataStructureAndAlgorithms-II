@@ -285,6 +285,56 @@ public class Main {
 		return secondMax;
 	}
 
+	static int[] moveZerosToLast(int[] arr){
+		int j=0;
+		for(int i=0;i<arr.length;i++){
+			if(arr[i]!=0){
+				arr[j++] = arr[i];
+			}
+		}
+		while(j<arr.length){
+			arr[j++] = 0;
+		}
+		return arr;
+	}
+
+	static int[] moveZeros(int[] arr){
+		int j=arr.length-1;
+		for(int i=arr.length-1; i>=0;i--){
+			if(arr[i]!=0){
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+				j--;
+			}
+		}
+		return arr;
+	}
+	static void removeDuplicatesI(int[] arr){
+		int j = 0;
+		for(int i=1;i<arr.length;i++){
+			if(arr[i] != arr[j]){
+				j++;
+				int temp = arr[i];
+				arr[i] = arr[j];
+				arr[j] = temp;
+			}
+		}
+		for(int i=0;i<=j;i++){
+			System.out.print(arr[i]+" ");
+		}
+	}
+
+	static int removeDuplicatesII(int[] arr){
+		int k = 2;
+		for(int i=2;i<arr.length;i++){
+			if(arr[i] != arr[k-2]){
+				arr[k++] = arr[i];
+			}
+		}
+		return k;
+	}
+
 	public static void main(String[] args) {
 		int x = 25525241;
 		List<String> li = List.of("Arun", "Ravi", "Vikram", "Akhil", "Surya");
@@ -297,6 +347,9 @@ public class Main {
 		String s2 = "a#b#c#d";
 		int[] arr = {1,2,3,4,5,7,8,9,10,11,12};
 		int n = 1958;
+
+		int[] arr3 = {1,0,3,0,2,0,0,4,0};
+		int[] arr4 = {0,0,1,1,1,1,2,3,3};
 //		System.out.println(reverse(x));
 //		System.out.println(countDigits(x));
 //		System.out.println(digitsSum(x));
@@ -330,7 +383,18 @@ public class Main {
 //		System.out.println(string);
 //		System.out.println(reverseNumber(x));
 //		printFirstCharOfEachWord(s1);
-		System.out.println(secondLargestElement(arr1));
+//		System.out.println(secondLargestElement(arr1));
+
+		// int[] res = moveZerosToLast(arr3);
+		// for(int i=0;i<res.length;i++){
+		//     System.out.print(res[i]+" ");
+		// }
+		// System.out.print(removeDuplicatesII(arr4));
+		// int[] res1 = moveZeros(arr);
+		// for(int i=0;i<res1.length;i++){
+		//     System.out.print(res1[i]+" ");
+		// }
+		removeDuplicatesI(arr4);
 
 	}
 
