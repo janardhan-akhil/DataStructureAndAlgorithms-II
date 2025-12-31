@@ -335,6 +335,21 @@ public class Main {
 		return k;
 	}
 
+	static int kthLargerstElement(int[] arr, int k){
+//		PriorityQueue<Integer> pq = new PriorityQueue<>();
+//		for(int i=0;i<arr.length;i++){
+//			pq.add(arr[i]);
+//			if(pq.size()>k){
+//				pq.poll();
+//			}
+//		}
+//		return pq.peek();
+
+		Arrays.sort(arr);
+		return arr[arr.length - k];
+	}
+
+
 	public static void main(String[] args) {
 		int x = 25525241;
 		List<String> li = List.of("Arun", "Ravi", "Vikram", "Akhil", "Surya");
@@ -394,8 +409,8 @@ public class Main {
 		// for(int i=0;i<res1.length;i++){
 		//     System.out.print(res1[i]+" ");
 		// }
-		removeDuplicatesI(arr4);
-
+//		removeDuplicatesI(arr4);
+		System.out.println(kthLargerstElement(arr2,3));
 	}
 
 }
